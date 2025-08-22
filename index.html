@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Форма заявки</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f9; }
+    .container { width: 600px; margin: 30px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+    h2 { text-align: center; }
+    label { display: block; margin-top: 10px; }
+    input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; }
+    textarea { height: 100px; }
+    .radio-group, .checkbox-group { margin-top: 10px; }
+    button { margin-top: 20px; padding: 10px; width: 100%; background: #28a745; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+    button:hover { background: #218838; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Форма заявки</h2>
+    <form action="submit.php" method="POST">
+      <label>ФИО:
+        <input type="text" name="fio" required maxlength="150">
+      </label>
+
+      <label>Телефон:
+        <input type="tel" name="phone" required>
+      </label>
+
+      <label>E-mail:
+        <input type="email" name="email" required>
+      </label>
+
+      <label>Дата рождения:
+        <input type="date" name="birth_date" required>
+      </label>
+
+      <div class="radio-group">
+        Пол: 
+        <label><input type="radio" name="gender" value="male" required> Мужской</label>
+        <label><input type="radio" name="gender" value="female"> Женский</label>
+      </div>
+
+      <label>Любимые языки программирования:
+        <select name="languages[]" multiple required>
+          <option value="1">Pascal</option>
+          <option value="2">C</option>
+          <option value="3">C++</option>
+          <option value="4">JavaScript</option>
+          <option value="5">PHP</option>
+          <option value="6">Python</option>
+          <option value="7">Java</option>
+          <option value="8">Haskel</option>
+          <option value="9">Clojure</option>
+          <option value="10">Prolog</option>
+          <option value="11">Scala</option>
+          <option value="12">Go</option>
+        </select>
+      </label>
+
+      <label>Биография:
+        <textarea name="biography"></textarea>
+      </label>
+
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="agreed" value="1" required> С контрактом ознакомлен(а)</label>
+      </div>
+
+      <button type="submit">Сохранить</button>
+    </form>
+  </div>
+</body>
+</html>
